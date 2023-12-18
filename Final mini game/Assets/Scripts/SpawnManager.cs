@@ -36,8 +36,9 @@ public class SpawnManager : MonoBehaviour
         {
             Instantiate(collectibleObject, RandomSpawnPosition(), collectibleObject.transform.rotation);
         }
+        coinAmount = 2;
     }
-
+   
 
     Vector3 RandomSpawnPosition()
     {
