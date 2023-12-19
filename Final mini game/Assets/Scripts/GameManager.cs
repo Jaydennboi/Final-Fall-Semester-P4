@@ -8,11 +8,15 @@ public class GameManager : MonoBehaviour
     public bool isGameActive = false;
 
     public Button replayButton;
+    public Button startButton;
+    public GameObject coinText;
 
     // Start is called before the first frame update
     void Start()
     {
         replayButton.gameObject.SetActive(false);
+        coinText.SetActive(false);
+        startButton.gameObject.SetActive(true);
     }
 
     // Update is called once per frame
@@ -30,5 +34,14 @@ public class GameManager : MonoBehaviour
     public void PressReplayButton()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void PressStartButoon()
+    {
+        isGameActive = true;
+        coinText.SetActive(true);
+        startButton.gameObject.SetActive(false);
+        GameObject.Find("Spawn Manager").GetComponent<SpawnManager>().SpawnCollectibleObject();
+        GameObject.Find("Spawn Manager").GetComponent<SpawnManager>().StartCreatingZombies();
     }
 }

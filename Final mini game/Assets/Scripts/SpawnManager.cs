@@ -14,8 +14,8 @@ public class SpawnManager : MonoBehaviour
     void Start()
     {
         //SpawnEnemyObject();
-        StartCoroutine(SpawnRandomAmountOfEnemies());
-        SpawnCollectibleObject();
+        //StartCoroutine(SpawnRandomAmountOfEnemies());
+        //SpawnCollectibleObject();
 
     }
 
@@ -63,4 +63,11 @@ public class SpawnManager : MonoBehaviour
             }
         }
     }
+
+    public void StartCreatingZombies()
+    {
+        StartCoroutine(SpawnRandomAmountOfEnemies());
+    }
 }
+
+
